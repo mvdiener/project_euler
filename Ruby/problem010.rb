@@ -2,6 +2,7 @@
 
 # Find the sum of all the primes below two million.
 
+# ======Slower brute force method=======
 # def is_prime?(number)
 # 	is_prime = true
 # 	2.upto(Math.sqrt(number).floor) do |num|

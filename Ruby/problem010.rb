@@ -22,7 +22,6 @@
 # 	primes_array
 # end
 
-# puts find_primes(2000000).inject(:+)
 
 # using the Sieve of Eratosthenes
 def find_primes(limit)
@@ -38,7 +37,7 @@ def find_primes(limit)
 			next
 		end
 	end
-	num_array
+	num_array.compact
 end
 
-p find_primes(2000000).compact.inject(:+)
+p find_primes(2000000).inject(:+)

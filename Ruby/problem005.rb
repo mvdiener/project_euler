@@ -6,18 +6,17 @@ number = 20
 found = true
 
 while found
-	20.downto(11) do |multiple|
-		# p number
-		if multiple == 1
-			found = false
-			break
-		elsif number % multiple == 0
-			next
-		elsif number % multiple != 0
-			number += 20
-			break
-		end
-	end
+  20.downto(11) do |multiple|
+    if multiple == 1
+      found = false
+      break
+    elsif number % multiple == 0
+      next
+    elsif number % multiple != 0
+      number += 20
+      break
+    end
+  end
 end
 
 p number

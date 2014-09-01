@@ -5,15 +5,15 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 def add_last_two(array)
-	array[-1] + array[-2]
+  array[-1] + array[-2]
 end
 
 def fib_array(limit)
-	array = [1,2]
-	while add_last_two(array) <= limit
-		array << add_last_two(array)
-	end
-	array
+  array = [1,2]
+  while add_last_two(array) <= limit
+    array << add_last_two(array)
+  end
+  array
 end
 
 p fib_array(4000000).select{|x| x.even? }.inject(:+)

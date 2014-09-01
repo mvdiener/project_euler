@@ -8,8 +8,8 @@
 
 # Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-a = ((1..100).to_a.map{|x| x**2}).inject(:+)
+a = ((1..100).map{|x| x**2}).inject(:+)
 
-b = ((1..100).to_a.inject(:+))**2
+b = ((1..100).inject(:+))**2
 
 puts b-a

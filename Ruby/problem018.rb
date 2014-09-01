@@ -34,7 +34,7 @@ def triangle_sum(array)
       parent1 > parent2 ? array[row][index] += parent1 : array[row][index] += parent2
     end
   end
-  array.last.sort.last
+  array.last.max
 end
 
 p triangle_sum(triangle)

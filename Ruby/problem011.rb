@@ -27,9 +27,9 @@ grid = [[ 8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77,
 
 def check_row_product(array, num)
   largest = 0
-  start_index = 0
-  end_index = start_index + num - 1
   array.each do |row|
+    start_index = 0
+    end_index = num - 1
     while end_index <= row.length
       product = row[start_index..end_index].inject(:*)
       largest = product if product > largest
@@ -42,16 +42,30 @@ end
 
 def check_diag_product(array, num)
   largest = 0
-  start_index = 0
-  while start_index <= array.length - num
-    # product = 
+  array.each_with_index do |row, row_i|
+    break if row_i == array.length - num + 1
+    end_index = num - 1
+    row.each_with_index do |value, value_i|
+      break if value_i == row.length - num + 1
+      product = 1
+      start_index = row_i
+      num.times do
+        product *= array[start_index][value_i]
+        start_index += 1
+        value_i += 1
+      end
+      largest = product if product > largest
+    end
   end
+  largest
 end
 
 def find_largest_product(array, num)
   all_products = []
   all_products << check_row_product(array, num)
   all_products << check_row_product(array.transpose, num)
+  all_products << check_diag_product(array, num)
+  all_products <<  check_diag_product(array.transpose.map{|row| row.reverse}, num)
   all_products.sort.last
 end
 

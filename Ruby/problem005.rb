@@ -2,8 +2,6 @@
 
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-# lcm(a,b) = |a*b|/gcd(a,b)
-
 def prime_factors(number, array=[])
   2.upto(number) do |factor|
     if number % factor == 0

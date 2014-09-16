@@ -13,7 +13,7 @@ def fib_array(limit)
   while add_last_two(array) <= limit
     array << add_last_two(array)
   end
-  array
+  array.select{|x| x.even? }.inject(:+)
 end
 
-p fib_array(4000000).select{|x| x.even? }.inject(:+)
+p fib_array(4000000)

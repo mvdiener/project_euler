@@ -5,9 +5,8 @@
 # (Please note that the palindromic number, in either base, may not include leading zeros.)
 
 def check_palindrome(string)
-  letters = string
-  return false if letters[0] == '0'
-  letters == letters.reverse
+  return false if string[0] == '0'
+  string == string.reverse
 end
 
 def check_both_bases(num)

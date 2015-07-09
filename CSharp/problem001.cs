@@ -16,8 +16,7 @@ namespace Problem001
 
     public static int SumOfMultiples(int endRange)
     {
-      int sum;
-      sum = Enumerable.Range(1, endRange - 1).Where(x => x%3 == 0 || x%5 == 0).Sum();
+      int sum = Enumerable.Range(1, endRange - 1).Where(x => x%3 == 0 || x%5 == 0).Sum();
       return sum;
     }
   }

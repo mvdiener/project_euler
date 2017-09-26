@@ -24,7 +24,7 @@ namespace Problem004
             {
                product = i * j;
                if (product < largest) break;
-               if (product.ToString() == new string(product.ToString().ToCharArray().Reverse().ToArray()))
+               if (isPalindrome(product))
                {
                   if (product > largest) largest = product;
                   break;
@@ -32,6 +32,11 @@ namespace Problem004
             }
          }
          return largest;
+      }
+
+      private static bool isPalindrome(int num)
+      {
+         return num.ToString() == new string(num.ToString().ToCharArray().Reverse().ToArray());
       }
    }
 }
